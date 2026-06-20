@@ -32,6 +32,16 @@ Pipelining improves FIR filter performance by inserting registers between arithm
 * Clock period depends on the **slowest stage**, not the sum of all stages.
 * Pipelining increases throughput and allows high-speed FIR filter operation.
 
+| Parameter           | Value            |
+| ------------------- | ---------------- |
+| Filter Type         | FIR Low Pass     |
+| Number of Taps      | 8                |
+| Coefficients Source | MATLAB (fir1)    |
+| Quantization        | Q8 Fixed Point   |
+| Optimization        | CSA + Pipelining |
+| Target              | FPGA/VLSI        |
+
+
 
 
 

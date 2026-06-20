@@ -15,13 +15,4 @@ The project "Pipelined Low-Power FIR Filter Using Carry Save Adders and Parallel
 | VLSI Value | Good | Excellent |
 
 
-x[n] ──► D ──► D ──► D
-  │       │      │      │
- ×h0     ×h1    ×h2    ×h3
-  │       │      │      │
-  └───────┴──────┴──────┘
-            +
-            +
-            +
-            │
-          y[n]
+

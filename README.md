@@ -13,3 +13,15 @@ Parallel Processing               	No	                                Yes
 Power Optimization	                No	                                Yes
 Speed	                             Moderate                              High
 VLSI Value	                        Good	                             Excellent
+
+| Feature | Basic FIR Filter | Pipelined Low-Power FIR Filter |
+|----------|----------|----------|
+| Verilog Implementation | Yes | Yes |
+| MATLAB Coefficients | Yes | Yes |
+| Multipliers | Normal | Optimized |
+| Adders | Ripple/Normal Adders | Carry Save Adders (CSA) |
+| Pipelining | Optional | Mandatory |
+| Parallel Processing | No | Yes |
+| Power Optimization | No | Yes |
+| Speed | Moderate | High |
+| VLSI Value | Good | Excellent |

@@ -1,1 +1,1 @@
-# Results of Baic 8Tap FIR FILTER
+# Results of Basic 8Tap FIR FILTER

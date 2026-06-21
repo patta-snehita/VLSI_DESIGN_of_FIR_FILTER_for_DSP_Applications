@@ -42,8 +42,7 @@ Pipelining improves FIR filter performance by inserting registers between arithm
 | Target              | FPGA/VLSI        |
 
 "Starting from a conventional 8-tap FIR filter, coefficient symmetry was exploited to reduce multiplier count by 50%, followed by pipelining and carry-save adder integration to improve timing performance and reduce critical path delay."
-
-
+done!!
 
 
 

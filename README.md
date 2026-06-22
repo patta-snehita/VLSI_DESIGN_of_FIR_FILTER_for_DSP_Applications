@@ -1,14 +1,13 @@
 # 🚀 Design of Pipelined Low-Power FIR Filter Using Carry Save Adders and Parallel Processing Techniques
-<p align="center">
-  <img src="https://img.shields.io/badge/Verilog-HDL-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/DSP-FIR_Filter-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Filter-16_Tap-success?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Symmetry-Optimized-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Pipelining-Enabled-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/CSA-Integrated-purple?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Parallel_Processing-2X_Throughput-blueviolet?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Vivado-2025.2-yellow?style=for-the-badge">
-</p>
+
+![Language](https://img.shields.io/badge/Language-Verilog-blue)
+![Domain](https://img.shields.io/badge/Domain-DSP-green)
+![Filter](https://img.shields.io/badge/Filter-16Tap-success)
+![Symmetry](https://img.shields.io/badge/Symmetry-Enabled-yellowgreen)
+![Optimization](https://img.shields.io/badge/Optimization-Pipelining-orange)
+![CSA](https://img.shields.io/badge/Architecture-CSA-red)
+![Parallel](https://img.shields.io/badge/Processing-2X_Parallel-purple)
+![Tool](https://img.shields.io/badge/Tool-Vivado-blueviolet)
 
 ## 📌 Overview
 This project documents my journey from a **Basic FIR Filter** to a **16-Tap Pipelined Low-Power FIR Filter with Carry Save Adders (CSA) and Parallel Processing Techniques** using Verilog HDL.

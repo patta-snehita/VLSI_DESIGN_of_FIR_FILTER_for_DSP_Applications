@@ -9,6 +9,16 @@
 ![Parallel](https://img.shields.io/badge/Processing-2X_Parallel-purple)
 ![Tool](https://img.shields.io/badge/Tool-Vivado-blueviolet)
 
+### From Basic FIR → Symmetric FIR → Pipelined FIR → CSA-Based FIR → 16-Tap Parallel FIR
+
+![Language](https://img.shields.io/badge/Language-Verilog-blue)
+![Domain](https://img.shields.io/badge/Domain-DSP-green)
+![Filter](https://img.shields.io/badge/Filter-16Tap-success)
+![Optimization](https://img.shields.io/badge/Optimization-Pipelining-orange)
+![Architecture](https://img.shields.io/badge/Architecture-CSA-red)
+![Processing](https://img.shields.io/badge/Processing-Parallel-purple)
+![Tool](https://img.shields.io/badge/Tool-Vivado-blueviolet)
+
 ## 📌 Overview
 This project documents my journey from a **Basic FIR Filter** to a **16-Tap Pipelined Low-Power FIR Filter with Carry Save Adders (CSA) and Parallel Processing Techniques** using Verilog HDL.
 

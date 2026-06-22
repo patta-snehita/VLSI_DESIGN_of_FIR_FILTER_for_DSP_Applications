@@ -144,21 +144,6 @@ Two independent FIR engines operate simultaneously, allowing two input samples t
 | Resource Utilization Analysis | Area optimization |
 | FPGA Hardware Deployment | Real-time implementation |
 
-### Future Design Flow
-
-```text
-16-Tap Pipelined FIR
-          ↓
-CSA-Based FIR
-          ↓
-2-Parallel FIR
-          ↓
-Polyphase FIR
-          ↓
-High-Speed Low-Power DSP Architecture
-```
-
----
 
 ## 🛠️ Tools Used
 

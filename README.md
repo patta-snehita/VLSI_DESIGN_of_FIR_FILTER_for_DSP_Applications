@@ -1,48 +1,259 @@
-# VLSI_DESIGN_of_FIR_FILTER_for_DSP_Applications
-The project "Pipelined Low-Power FIR Filter Using Carry Save Adders and Parallel Processing Techniques" is a more advanced version.
+# 🚀 Design of Pipelined Low-Power FIR Filter Using Carry Save Adders and Parallel Processing Techniques
+
+## 📌 Overview
+This project documents my journey from a **Basic FIR Filter** to a **16-Tap Pipelined Low-Power FIR Filter with Carry Save Adders (CSA) and Parallel Processing Techniques** using Verilog HDL.
+
+---
+
+## 🎯 Project Journey
+
+| Stage | Architecture |
+|---------|------------|
+| 1 | Basic 8-Tap FIR Filter |
+| 2 | 8-Tap Symmetric FIR Filter |
+| 3 | 8-Tap Pipelined Symmetric FIR |
+| 4 | 8-Tap Pipelined FIR with CSA |
+| 5 | 16-Tap Symmetric FIR |
+| 6 | 16-Tap Pipelined FIR |
+| 7 | 16-Tap Pipelined FIR with CSA |
+| 8 | 16-Tap Pipelined FIR with CSA and Parallel Processing |
+
+---
+
+## ⚡ Motivation
+
+The goal was to study how different architectural optimizations affect:
+
+| Metric | Goal |
+|----------|---------|
+| Speed | Increase operating frequency |
+| Area | Reduce hardware complexity |
+| Power | Lower switching activity |
+| Throughput | Process more samples per clock |
+| Scalability | Support larger FIR architectures |
+
+---
+
+## 🏗️ Final Architecture
+
+| Feature | Description |
+|----------|------------|
+| FIR Length | 16 Tap |
+| Filter Type | Symmetric FIR |
+| Pipeline Stages | Multi-stage |
+| Adder Architecture | Carry Save Adder (CSA) |
+| Processing Method | 2-Parallel Processing |
+| HDL | Verilog HDL |
+| Tool Used | Xilinx Vivado |
+
+---
+
+## 📊 Design Evolution
+
+| Version | Optimization Introduced | Benefit |
+|-----------|----------------------|---------|
+| Basic FIR | Direct implementation | Functional verification |
+| Symmetric FIR | Coefficient symmetry | Reduced multipliers |
+| Pipelined FIR | Pipeline registers | Higher clock frequency |
+| CSA FIR | Carry Save Adder | Faster accumulation |
+| Parallel FIR | Dual FIR engines | 2× Throughput |
+
+---
+
+## ⚙️ Optimization Techniques
+
+### 1️⃣ Symmetric FIR
+
+Instead of using all multipliers independently, symmetric coefficients are paired together.
+
+| Benefit |
+|----------|
+| Reduced multiplier count |
+| Lower hardware utilization |
+| Reduced power consumption |
+
+---
+
+### 2️⃣ Pipelining
+
+Registers are inserted between computational stages.
+
+| Benefit |
+|----------|
+| Reduced critical path delay |
+| Increased operating frequency |
+| Improved timing performance |
+
+---
+
+### 3️⃣ Carry Save Adders (CSA)
+
+Carry propagation is postponed until the final stage.
+
+| Benefit |
+|----------|
+| Faster accumulation |
+| Reduced adder delay |
+| Better scalability for larger FIR filters |
+
+---
+
+### 4️⃣ Parallel Processing
+
+Two FIR engines process independent input streams simultaneously.
+
+| Benefit |
+|----------|
+| 2× Throughput |
+| Increased data processing rate |
+| Better performance for real-time DSP applications |
+
+---
+
+## 🔄 Parallel Architecture
+
+```text
+Input Stream x0
+       │
+       ▼
+  FIR Engine #1
+       │
+       ▼
+      y0
 
 
-| Feature | Basic FIR Filter | Pipelined Low-Power FIR Filter |
-|----------|----------|----------|
-| Verilog Implementation | Yes | Yes |
-| MATLAB Coefficients | Yes | Yes |
-| Multipliers | Normal | Optimized |
-| Adders | Ripple/Normal Adders | Carry Save Adders (CSA) |
-| Pipelining | Optional | Mandatory |
-| Parallel Processing | No | Yes |
-| Power Optimization | No | Yes |
-| Speed | Moderate | High |
-| VLSI Value | Good | Excellent |
+Input Stream x1
+       │
+       ▼
+  FIR Engine #2
+       │
+       ▼
+      y1
+```
 
-## Pipelining Concept
+---
 
-Pipelining improves FIR filter performance by inserting registers between arithmetic stages, reducing the critical path delay and increasing the operating frequency.
+## 🧪 Simulation Inputs
 
-| Parameter     | Without Pipelining                 | With Pipelining                        |
-| ------------- | ---------------------------------- | -------------------------------------- |
-| Structure     | Multiplier → Adder → Adder → Adder | Multiplier → Reg → Adder → Reg → Adder |
-| Critical Path | 5 + 2 + 2 + 2 = 11 ns              | max(5, 2, 2, 2) = 5 ns                 |
-| Max Frequency | Lower                              | Higher                                 |
-| Throughput    | Lower                              | Higher                                 |
-| Latency       | ~11 ns                             | ~11 ns                                 |
+### Input Stream x0
 
-### Key Point
+```text
+2, 4, 6, 8, 10, 12, 14, 16,
+18, 20, 22, 24, 26, 28, 30, 32
+```
 
-* Registers split the long combinational path into smaller stages.
-* Clock period depends on the **slowest stage**, not the sum of all stages.
-* Pipelining increases throughput and allows high-speed FIR filter operation.
+### Input Stream x1
 
-| Parameter           | Value            |
-| ------------------- | ---------------- |
-| Filter Type         | FIR Low Pass     |
-| Number of Taps      | 8                |
-| Coefficients Source | MATLAB (fir1)    |
-| Quantization        | Q8 Fixed Point   |
-| Optimization        | CSA + Pipelining |
-| Target              | FPGA/VLSI        |
+```text
+32, 30, 28, 26, 24, 22, 20, 18,
+16, 14, 12, 10, 8, 6, 4, 2
+```
 
-"Starting from a conventional 8-tap FIR filter, coefficient symmetry was exploited to reduce multiplier count by 50%, followed by pipelining and carry-save adder integration to improve timing performance and reduce critical path delay."
-done!!
+---
 
+## 📈 Simulation Results
 
+| Metric | Result |
+|----------|---------|
+| Peak Output (y0) | 1260 @ 255000 ns |
+| Peak Output (y1) | 1260 @ 195000 ns |
+| Pipeline Verified | ✅ |
+| CSA Verified | ✅ |
+| Parallel Processing Verified | ✅ |
+| FIR Response Verified | ✅ |
+| RTL Synthesizable | ✅ |
 
+---
+
+## 🔍 Key Observation
+
+Although **y0** and **y1** reach their peak values at different times, both outputs achieve the same maximum value:
+
+```text
+Peak(y0) = 1260
+Peak(y1) = 1260
+```
+
+This confirms the correct operation of the parallel FIR architecture for two independent input streams.
+
+---
+
+## 🚀 Throughput Comparison
+
+| Architecture | Samples Processed per Clock |
+|--------------|-----------------------------|
+| Single FIR Core | 1 |
+| Parallel FIR Architecture | 2 |
+
+### Result
+
+🚀 **2× Throughput Improvement**
+
+---
+
+## 📋 Verification Summary
+
+| Check | Status |
+|---------|---------|
+| FIR Functional Verification | ✅ Passed |
+| Symmetric Architecture Verification | ✅ Passed |
+| Pipeline Verification | ✅ Passed |
+| CSA Verification | ✅ Passed |
+| Parallel Processing Verification | ✅ Passed |
+| Simulation Verification | ✅ Passed |
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Category | Tool |
+|-----------|------|
+| HDL | Verilog HDL |
+| Simulation | Xilinx Vivado |
+| Design Style | RTL Design |
+| Domain | DSP / VLSI |
+| Optimization Techniques | Symmetry, Pipelining, CSA, Parallel Processing |
+
+---
+
+## 🎯 Future Work
+
+| Planned Enhancement | Objective |
+|----------------------|------------|
+| Polyphase FIR Architecture | Hardware-efficient parallelism |
+| CSA Reduction Tree | Faster accumulation |
+| Advanced Parallel Processing | Higher throughput |
+| FPGA Implementation | Real-time deployment |
+| Timing & Resource Analysis | Performance evaluation |
+
+---
+
+## 📚 Key Learnings
+
+| Concept | Understanding Gained |
+|-----------|-------------------|
+| FIR Filters | Hardware implementation of DSP algorithms |
+| Symmetry | Resource optimization |
+| Pipelining | Throughput enhancement |
+| CSA | Fast accumulation techniques |
+| Parallel Processing | High-speed DSP architectures |
+| RTL Design | Hardware modeling and verification |
+
+---
+
+## 👩‍💻 Author
+
+**Patta Snehita**  
+B.Tech Electrical Engineering  
+National Institute of Technology Durgapur
+
+### Areas of Interest
+
+- RTL Design
+- FPGA Development
+- Digital Signal Processing
+- Verilog HDL
+- VLSI Design
+- Hardware Acceleration
+
+⭐ If you found this project useful, feel free to star the repository.

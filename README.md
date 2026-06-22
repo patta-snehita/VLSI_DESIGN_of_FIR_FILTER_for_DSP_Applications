@@ -1,19 +1,11 @@
 # 🚀 Design of Pipelined Low-Power FIR Filter Using Carry Save Adders and Parallel Processing Techniques
 
-![Language](https://img.shields.io/badge/Language-Verilog-blue)
-![Domain](https://img.shields.io/badge/Domain-DSP-green)
-![Filter](https://img.shields.io/badge/Filter-16Tap-success)
-![Symmetry](https://img.shields.io/badge/Symmetry-Enabled-yellowgreen)
-![Optimization](https://img.shields.io/badge/Optimization-Pipelining-orange)
-![CSA](https://img.shields.io/badge/Architecture-CSA-red)
-![Parallel](https://img.shields.io/badge/Processing-2X_Parallel-purple)
-![Tool](https://img.shields.io/badge/Tool-Vivado-blueviolet)
-
 ### From Basic FIR → Symmetric FIR → Pipelined FIR → CSA-Based FIR → 16-Tap Parallel FIR
 
 ![Language](https://img.shields.io/badge/Language-Verilog-blue)
 ![Domain](https://img.shields.io/badge/Domain-DSP-green)
 ![Filter](https://img.shields.io/badge/Filter-16Tap-success)
+![Symmetry](https://img.shields.io/badge/Symmetry-Enabled-yellow)
 ![Optimization](https://img.shields.io/badge/Optimization-Pipelining-orange)
 ![Architecture](https://img.shields.io/badge/Architecture-CSA-red)
 ![Processing](https://img.shields.io/badge/Processing-Parallel-purple)
